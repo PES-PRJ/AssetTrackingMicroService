@@ -1,10 +1,10 @@
-package bt.edu.gcit.assettrackingmicroservice;
+package bt.edu.gcit.assettracking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AssettrackingmicroserviceApplicationTests {
+class AssettrackingApplicationTests {
 
 	@Test
 	void contextLoads() {

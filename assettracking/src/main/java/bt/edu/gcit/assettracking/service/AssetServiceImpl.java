@@ -47,4 +47,11 @@ public class AssetServiceImpl implements AssetService {
         Asset asset = getAssetById(id);
         assetRepository.delete(asset);
     }
+
+    // Keep your existing methods and append this one at the bottom:
+
+    @Override
+    public List<Asset> getAssetsByEmployee(String email) {
+        return assetRepository.findByAssignedTo(email);
+    }
 }

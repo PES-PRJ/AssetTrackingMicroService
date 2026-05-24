@@ -9,4 +9,7 @@ public interface AssetService {
     Asset getAssetById(Long id);
     Asset updateAsset(Long id, Asset assetDetails);
     void deleteAsset(Long id);
+    
+    // Add this line:
+    List<Asset> getAssetsByEmployee(String email); 
 }

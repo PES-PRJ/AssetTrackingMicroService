@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/assets")
@@ -39,5 +40,12 @@ public class AssetController {
     public ResponseEntity<String> deleteAsset(@PathVariable Long id) {
         assetService.deleteAsset(id);
         return ResponseEntity.ok("Asset with ID " + id + " deleted successfully.");
+    }
+
+    @GetMapping("/my-assets")
+    public ResponseEntity<List<Asset>> getMyAssets(Principal principal) {
+        // principal.getName() extracts the subject (email) embedded inside the JWT
+        String email = principal.getName();
+        return ResponseEntity.ok(assetService.getAssetsByEmployee(email));
     }
 }
